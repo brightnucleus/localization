@@ -1,0 +1,22 @@
+{
+  "name": "brightnucleus/localization",
+  "description": "WordPress localization for Bright Nucleus components.",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alain Schlesser",
+      "email": "alain.schlesser@gmail.com"
+    }
+  ],
+  "require": {
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "BrightNucleus\\Localization\\": "src/"
+    }
+  }
+}
