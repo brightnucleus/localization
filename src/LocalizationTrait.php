@@ -32,11 +32,11 @@ trait LocalizationTrait {
 	 * @param string $path   Path to languages files.
 	 */
 	protected function loadLocalization( $domain, $path ) {
-		if ( is_textdomain_loaded( $domain ) ) {
+		if ( \is_textdomain_loaded( $domain ) ) {
 			return;
 		}
 
-		$locale = get_locale();
+		$locale = \get_locale();
 
 		/**
 		 * Filter the locale of a Bright Nucleus library.
@@ -48,7 +48,7 @@ trait LocalizationTrait {
 		 *                       translated strings.
 		 * @return string $locale Filtered locale.
 		 */
-		$locale = apply_filters(
+		$locale = \apply_filters(
 			Localization::LOCALE_FILTER,
 			$locale,
 			$domain
@@ -65,7 +65,7 @@ trait LocalizationTrait {
 		 *                       translated strings.
 		 * @return string $path Filtered path to the MO-file.
 		 */
-		$mofile = apply_filters(
+		$mofile = \apply_filters(
 			Localization::MOFILE_FILTER,
 			sprintf(
 				'%1$s/%2$s-%3$s.mo',
@@ -77,7 +77,7 @@ trait LocalizationTrait {
 			$domain
 		);
 
-		return load_textdomain(
+		return \load_textdomain(
 			$domain,
 			$mofile
 		);
